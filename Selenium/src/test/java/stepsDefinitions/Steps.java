@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class Steps {
 
     WebDriver driver;
@@ -36,9 +38,17 @@ public class Steps {
     }
 
     @When("the user clicks on search button")
-    public void step2() {
-        WebElement searchButton = driver.findElements(By.name("btnK")).get(0);
-        searchButton.click();
+    public void uderClickOnSearch()
+    {
+        List<WebElement> searchButtons = driver.findElements(By.name("btnK"));
+        for(WebElement searchButton : searchButtons)
+        {
+            if(searchButton.isDisplayed())
+            {
+                searchButton.click();
+            }
+        }
+
     }
 
     @Then("the user should see sdacademy on search results")
