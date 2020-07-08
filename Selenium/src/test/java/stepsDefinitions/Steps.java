@@ -39,7 +39,7 @@ public class Steps {
     }
 
     @When("the user clicks on search button")
-    public void uderClickOnSearch()
+    public void userClickOnSearch()
     {
         List<WebElement> searchButtons = driver.findElements(By.name("btnK"));
         for(WebElement searchButton : searchButtons)
